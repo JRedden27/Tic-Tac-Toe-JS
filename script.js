@@ -11,7 +11,7 @@ function playerSwitch(){
 }
 
 function checkForWinner(){
-    if(document.getElementById("topLeft").innerText === document.getElementById("topCenter").innerText && document.getElementById("topLeft").innerText === document.getElementById("topRight").innerText && document.getElementById("topRight").innerText !== "?"){
+    if(document.getElementById("topLeft").innerText === document.getElementById("topCenter").innerText && document.getElementById("topLeft").innerText === document.getElementById("topRight").innerText && document.getElementById("topLeft").innerText !== "?"){
         playerSymbol = document.getElementById("topLeft").innerText;
         document.getElementById("title").innerText = `Player ${playerSymbol} wins!`;
     } else if(document.getElementById("centerLeft").innerText === document.getElementById("center").innerText && document.getElementById("centerLeft").innerText === document.getElementById("centerRight").innerText && document.getElementById("centerLeft").innerText !== "?"){
@@ -61,22 +61,6 @@ document.querySelectorAll(".grid-item").forEach(item => {
 function clearBoard(){
     playerSymbol = "X";
     document.getElementById("title").innerText = "Player X's Turn";
-    document.getElementById("topLeft").style.color = "white";
-    document.getElementById("topLeft").innerText = "?";
-    document.getElementById("topCenter").style.color = "white";
-    document.getElementById("topCenter").innerText = "?";
-    document.getElementById("topRight").style.color = "white";
-    document.getElementById("topRight").innerText = "?";
-    document.getElementById("centerLeft").style.color = "white";
-    document.getElementById("centerLeft").innerText = "?";
-    document.getElementById("center").style.color = "white";
-    document.getElementById("center").innerText = "?";
-    document.getElementById("centerRight").style.color = "white";
-    document.getElementById("centerRight").innerText = "?";
-    document.getElementById("bottomLeft").style.color = "white";
-    document.getElementById("bottomLeft").innerText = "?";
-    document.getElementById("bottomCenter").style.color = "white";
-    document.getElementById("bottomCenter").innerText = "?";
-    document.getElementById("bottomRight").style.color = "white";
-    document.getElementById("bottomRight").innerText = "?";
+    document.querySelectorAll(".grid-item").forEach(item => item.innerText = "?");
+    document.querySelectorAll(".grid-item").forEach(item => item.style.color = "white");
 }
